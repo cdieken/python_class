@@ -1,0 +1,20 @@
+- 0
+- 1
+- 2
+- 3
+- 4
+- 5
+- 6
+- 7
+- cisco
+- juniper
+- brocade
+- ip_brocade: 10.3.1.1
+  ip_cisco: 10.1.1.1
+  ip_juniper: 10.2.1.1
+- iterate:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
