@@ -21,4 +21,5 @@ my_list[-1]['iterate'] = range(5)
 with open("class1.yml", "w") as f:
     f.write(yaml.dump(my_list, default_flow_style=False))
 
-
+with open("class1.json", "w") as f:
+    json.dump(my_list, f)
