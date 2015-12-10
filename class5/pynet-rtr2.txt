@@ -1,0 +1,26 @@
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime msec localtime show-timezone
+service timestamps log datetime msec localtime show-timezone
+service password-encryption
+!
+hostname pynet-rtr2
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 32000
+no logging console
+!
+no ip dhcp conflict logging
+!
+ip dhcp pool POOL1
+    network 1.1.2.0 255.255.255.0
+    default-router 1.1.1.2
+    dns-server 8.8.8.8 8.8.4.4
+!
+interface vlan1
+  ip address 1.1.1.2 255.255.255.0
+
+

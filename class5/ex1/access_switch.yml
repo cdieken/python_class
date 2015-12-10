@@ -1,0 +1,12 @@
+---
+- hosts: local
+  tasks:
+    - name: Generate configuration file
+      template: src=/home/cdieken/python_class/class5/ex1/access_switch.j2
+                  dest=/home/cdieken/python_class/class5/ex1/{{item.hostname}}.txt
+      with_items:
+        - {hostname: pynet-rtr1, ip_addr: 1.1.1.1, access_vlan: 80, default_gateway: 1.1.1.254, snmp_community: public, secret: testing123}
+        - {hostname: pynet-rtr2, ip_addr: 1.1.1.2, access_vlan: 80, default_gateway: 1.1.1.253, snmp_community: public, secret: testing123}
+        - {hostname: pynet-rtr3, ip_addr: 1.1.1.3, access_vlan: 80, default_gateway: 1.1.1.252, snmp_community: public, secret: testing123}
+        - {hostname: pynet-rtr4, ip_addr: 1.1.1.4, access_vlan: 80, default_gateway: 1.1.1.251, snmp_community: public, secret: testing123}
+        - {hostname: pynet-rtr5, ip_addr: 1.1.1.5, access_vlan: 80, default_gateway: 1.1.1.250, snmp_community: public, secret: testing123}
