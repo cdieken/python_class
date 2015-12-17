@@ -1,0 +1,16 @@
+---
+
+- name: get running config
+  hosts: arista
+
+  tasks:
+  - name: Get the Running Config
+    eos_command: commands="show running-config"
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+    register: cmd_out
+
+  - debug: var=cmd_out
